@@ -12,3 +12,7 @@
     color: white;
     font-weight: 600;
 }
+
+.swiper{
+    z-index: -1 !important;
+}
