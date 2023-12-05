@@ -5,6 +5,7 @@ import './animista.css'
 import SidebarMob from './components/SideBar_Mobile/SidebarMob'
 import Navbar from './components/Navbar/Navbar'
 import AllNavigations from './components/AllNavigations'
+import Footer from './components/Footer/Footer'
 export const store = createContext()
 
 
@@ -43,6 +44,7 @@ const App = () => {
           <Navbar />
         </div>
         <AllNavigations />
+        <Footer />
       </div>
     </store.Provider>
   )
