@@ -15,7 +15,9 @@
   text-align: center;
   display: inline-block;
 }
-
+section{
+  padding: 0 5rem;
+}
 .z{
   z-index: 1000 !important;
 }
@@ -81,5 +83,16 @@
   height: 100%;
 }
 
+
+@media screen and (max-width:1024px) {
+  section{
+    padding: 0 2rem;
+  }
+}
+@media screen and (max-width:760px) {
+  section{
+    padding: 0 .2rem;
+  }
+}
 
   

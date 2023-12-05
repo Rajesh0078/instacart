@@ -66,7 +66,7 @@ const Header = () => {
                 <div className='flex gap-3 md:gap-9 items-center '>
                     <SearchBar />
                     <div className='flex gap-5 items-center'>
-                        <Link><FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' /></Link>
+                        <Link to={"/cart"}><FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' /></Link>
                         <div>
                             {user && token ? <div className='border px-3 py-1 bg-slate-200 rounded-full'>
                                 {user.fullname}

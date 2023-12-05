@@ -5,7 +5,7 @@ import { store } from '../../App'
 import axios from 'axios'
 
 const Navbar = () => {
-    const { setCategory, category, setCatData, pageNo, setPageNo } = useContext(store)
+    const { setCategory, category, setCatData, pageNo, setPageNo, setIsSideBarOpen } = useContext(store)
 
     useEffect(() => {
         setCatData([])
@@ -16,14 +16,18 @@ const Navbar = () => {
 
     const categoryCtrl = (e) => {
         setPageNo(1)
+        setIsSideBarOpen(false)
         setCategory(e.target.innerHTML)
+    }
+    const sideBarClose = () => {
+        setIsSideBarOpen(false)
     }
 
     return (
         <>
             <div className='bg-green-800 pt-[4.6rem] pb-2 mb-2 text-slate-100  gap-3 navlink w-full md:flex hidden '>
-                <NavLink to={'/'} className="slide-right text-gray-200">Home</NavLink>
-                <NavLink to={'/category/pan'} className="slide-right text-gray-200" onClick={categoryCtrl}>Paan Corner</NavLink>
+                <NavLink to={'/'} className="slide-right text-gray-200" >Home</NavLink>
+                <NavLink to={'/category/paan Corner'} className="slide-right text-gray-200" onClick={categoryCtrl}>Paan Corner</NavLink>
                 <NavLink to={'/category/vegetables'} className="slide-right text-gray-200" onClick={categoryCtrl}>Vegetables</NavLink>
                 <NavLink to={'/category/fruits'} className="slide-right text-gray-200" onClick={categoryCtrl}>Fruits</NavLink>
                 <NavLink to={'/category/spices'} className="slide-right text-gray-200" onClick={categoryCtrl}>Spices</NavLink>
@@ -35,7 +39,7 @@ const Navbar = () => {
                 <NavLink to={'/category/canned'} className="slide-left text-gray-200" onClick={categoryCtrl}>Canned Goods</NavLink>
             </div>
             <div className='bg-gray-800 pt-3 pb-1 text-slate-100  px-3 gap-1 navlink flex-col flex md:hidden '>
-                <NavLink to={'/'} className="slide-right text-gray-200 inline">Home</NavLink>
+                <NavLink to={'/'} className="slide-right text-gray-200 inline" onClick={sideBarClose}>Home</NavLink>
                 <NavLink to={'/category/pan'} className="slide-right text-gray-200 inline" onClick={categoryCtrl}>Paan Corner</NavLink>
                 <NavLink to={'/category/vegetables'} className="slide-right text-gray-200 inline" onClick={categoryCtrl}>Vegetables</NavLink>
                 <NavLink to={'/category/fruits'} className="slide-right text-gray-200 inline" onClick={categoryCtrl}>Fruits</NavLink>

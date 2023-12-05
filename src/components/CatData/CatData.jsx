@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { store } from '../../App'
 import { GrSort } from "react-icons/gr";
 import Skeleton from '../Loaders/Skeleton';
@@ -6,9 +6,16 @@ import './catdata.css'
 import { FaRegHeart } from 'react-icons/fa';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useParams } from 'react-router-dom';
 
 const CatData = () => {
-    const { catData, category, setPageNo, user, setCartValue } = useContext(store)
+    const { catData, setCategory, category, setPageNo, user, setCartValue } = useContext(store)
+
+    let params = useParams()
+
+    useEffect(() => {
+        setCategory(params.vegetables)
+    }, [])
 
 
     const fetchCartData = async () => {
@@ -34,7 +41,7 @@ const CatData = () => {
 
     return (
         <div className='md:basis-4/5 rounded-md py-2  mar px-3 shadowx'>
-            <div className='flex justify-between border-b border-slate-400 pt-2 pb-2 text-sm md:text-xl'>
+            <div className='flex justify-between border-b border-slate-400 pt-2 pb-2  text-sm md:text-[1rem]'>
                 <span className=' tracking-in-contract'>showing {catData.startingProducts} - {catData.endProducts} of {catData.totalproducts} results of "<span className='text-orange-600'>{category}</span>"</span>
                 <div className=' tracking-in-contract'>sort <GrSort className='inline text-[1rem] ms-2 mb-1' /></div>
             </div>
