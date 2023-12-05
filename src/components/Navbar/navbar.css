@@ -1,0 +1,17 @@
+.navlink{
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.navlink a{
+    padding: .2rem .8rem;
+}
+.navlink a:hover{
+    background: #5fb05f;
+    border-radius: 1rem;
+    color: rgb(255, 255, 255);
+}
+.active{
+    background: #5fb05f;
+    border-radius: 1rem;
+    color: rgb(255, 255, 255);
+}

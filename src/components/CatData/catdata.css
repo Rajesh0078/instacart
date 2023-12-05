@@ -1,0 +1,15 @@
+.cutoff{
+    --maxlin:2;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--maxlin);
+    height: 2.2rem;
+}
+.product_title{
+    --maxlin:1;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--maxlin);
+}

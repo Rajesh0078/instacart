@@ -1,0 +1,22 @@
+.modal{
+    position: absolute;
+    top: -1000%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-height: 30rem;
+    box-shadow: 0px 1px .2rem rgba(0, 0, 0, .6);
+    transition: all 800ms ease-in-out 0s;
+}
+
+@media screen and (max-width:760px) {
+    .modal{
+        font-size: 79%;
+        width: 25rem;
+    }
+}
+@media screen and (max-width:370px) {
+    .modal{
+        font-size: 70%;
+        width: 20rem;
+    }
+}

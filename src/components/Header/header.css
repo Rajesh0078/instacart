@@ -1,0 +1,9 @@
+.logo{
+    max-width: 10rem;
+}
+
+@media screen and (max-width:400px) {
+    .logout svg{
+        display: none !important;
+    }
+}
