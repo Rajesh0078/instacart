@@ -63,7 +63,7 @@ const Random = () => {
                         randomProducts.length ?
                             randomProducts.map((product, index) => {
                                 return <SwiperSlide key={index} className='me-2 py-2 border '>
-                                    <div className='w-full flex justify-center h-[5.5rem]'><img src={product.image} alt="" className='w-[80%]' /></div>
+                                    <div className='w-full flex justify-center h-[7rem]'><img src={product.image} alt="" className='w-[80%]' /></div>
                                     <p className='text-center text-[.9rem] product_title font-medium mt-1'>{product.name}</p>
                                     <p className='text-green-800 text-sm text-center  mt-1'><IoIosStar className='inline me-1 mb-1' />{product.rating}</p>
                                     <div className='text-center'>
