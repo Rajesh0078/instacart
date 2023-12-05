@@ -38,7 +38,7 @@ const Header = () => {
 
     return (
         <>
-            <header className='fixed md:px-[3rem] lg:px-[5rem] shadow-md justify-between w-full py-3 z-50 md:flex hidden bg-white'>
+            <header className='fixed md:px-[3rem] lg:px-[5rem] shadow-md justify-between w-full py-3  md:flex hidden z bg-white'>
                 <div className='flex items-center gap-5'>
                     <Link to={'/'}><img src="/assets/logo.png" alt="logo" className='logo slide-right' /></Link>
                 </div>
@@ -58,7 +58,7 @@ const Header = () => {
 
             </header >
             <ToastContainer autoClose={2000} />
-            <header className='md:hidden fixed shadow-md w-full py-2 px-3 flex justify-between items-center bg-white'>
+            <header className='md:hidden fixed shadow-md w-full py-2 px-3 flex justify-between z items-center bg-white'>
                 <div className='flex gap-3 items-center'>
                     <FaBars size={20} className='text-green-900' onClick={sidebarHandler} role='button' />
                     <Link to={'/'}><img src="/assets/logo.png" alt="logo" className='w-[7rem]  slide-right' /></Link>

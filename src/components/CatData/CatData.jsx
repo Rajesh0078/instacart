@@ -33,31 +33,31 @@ const CatData = () => {
 
 
     return (
-        <div className='basis-4/5 rounded-md py-2 px-3 shadowx'>
-            <div className='flex justify-between border-b border-slate-400 pt-2 pb-2'>
+        <div className='md:basis-4/5 rounded-md py-2  mar px-3 shadowx'>
+            <div className='flex justify-between border-b border-slate-400 pt-2 pb-2 text-sm md:text-xl'>
                 <span className=' tracking-in-contract'>showing {catData.startingProducts} - {catData.endProducts} of {catData.totalproducts} results of "<span className='text-orange-600'>{category}</span>"</span>
                 <div className=' tracking-in-contract'>sort <GrSort className='inline text-[1rem] ms-2 mb-1' /></div>
             </div>
-            <div className='flex py-1 flex-wrap w-full'>
+            <div className='flex py-1  flex-wrap w-full'>
                 {
                     catData.totalproducts ?
                         catData.products.map((i, index) => {
-                            return <div className='basis-1/5 p-3 ' key={index}>
-                                <div className='shadowx rounded-md'>
-                                    <div className='flex justify-center'>
-                                        <img src={i.image} alt="product" className='h-[8rem] rounded-md object-cover object-center' />
+                            return <div className='md:basis-1/5 basis-1/3   md:p-2 cardxx' key={index}>
+                                <div className='shadowme rounded-md'>
+                                    <div className='flex justify-center pt-2'>
+                                        <img src={i.image} alt="product" className='md:h-[8rem] h-[5rem] rounded-md object-cover object-center' />
                                     </div>
                                     <div className='text-center'>
                                         <p className='text-[0.9rem] text-center p-1 product_title font-medium '>{i.name}</p>
                                         <h6 className='text-[0.7rem] text-gray-500 text-center px-2 cutoff'>{i.description}</h6>
-                                        <div className='text-left px-3'>
-                                            <div className='pt-2 flex items-center'>
-                                                <span className=' line-through text-gray-500 text-sm me-2'>₹{Math.ceil(i.price * 100)}</span>
+                                        <div className=' px-3'>
+                                            <div className='pt-2 flex items-center justify-center text-sm'>
+                                                <span className=' line-through text-gray-500 text-xs me-2'>₹{Math.ceil(i.price * 100)}</span>
                                                 <span>₹{Math.ceil((i.price * 100) * 0.9)} <span className='text-xs'>/kg</span></span>
-                                                <span className='ms-auto' role='button'><FaRegHeart className='text-orange-600' /></span>
+                                                <span className='ms-auto md:block hidden' role='button'><FaRegHeart className='text-orange-600' /></span>
                                             </div>
                                         </div>
-                                        <span className='button my-3' role='button' onClick={e => { addProductToCart(i._id) }}>Add to cart</span>
+                                        <span className='md:button text-sm bg-green-800 text-white px-2 py-1 inline-block rounded-md my-3' role='button' onClick={e => { addProductToCart(i._id) }}>Add to cart</span>
                                     </div>
                                 </div>
                             </div>

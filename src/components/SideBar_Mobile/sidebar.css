@@ -3,6 +3,6 @@
     left: -100%;
     transition: all 800ms ease-in-out 0s;
 }
-.active{
+.activex{
     left: 0%;
 }

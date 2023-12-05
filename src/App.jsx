@@ -39,7 +39,9 @@ const App = () => {
       <div className='relative'>
         <Header />
         <SidebarMob />
-        <Navbar />
+        <div className='md:flex hidden'>
+          <Navbar />
+        </div>
         <AllNavigations />
       </div>
     </store.Provider>
