@@ -171,8 +171,8 @@ const CartPage = () => {
                                                 <span>₹{Math.ceil((i.price * 100) * 0.9)} <span className='text-xs'>/kg</span></span>
                                             </div>
                                             <div className='mt-1 flex w-full pe-2'>
-                                                <span className='text-gray-700 text-sm'>Delivery by within 3 days</span>
-                                                <p className='ms-auto text-xs bg-orange-600 text-white pt-1 px-1 pb-1 mt-[-.4rem]' role='button' onClick={e => { handleRemoveProduct(i._id) }}>Remove item</p>
+                                                <span className='text-gray-700 text-sm'>Delivery in 3 days</span>
+                                                <p className='ms-auto text-xs bg-orange-600 text-white pt-1 px-1 pb-1 mt-[-.4rem]' role='button' onClick={e => { handleRemoveProduct(i._id) }}>Remove</p>
                                             </div>
                                         </div>
                                     </div>

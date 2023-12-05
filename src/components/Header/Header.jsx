@@ -65,11 +65,11 @@ const Header = () => {
                 </div>
                 <div className='flex gap-3 md:gap-9 items-center '>
                     <SearchBar />
-                    <div className='flex gap-5 items-center'>
+                    <div className='flex gap-3 items-center'>
                         <Link to={"/cart"}><FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' /></Link>
                         <div>
-                            {user && token ? <div className='border px-3 py-1 bg-slate-200 rounded-full'>
-                                {user.fullname}
+                            {user && token ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
+                                <FaUser className='inline mb-1 me-2' />{user.fullname}
                                 <HiOutlineLogout className='hidden text-green-900 hover:text-orange-600 ms-1 ' role='button' size={28} onClick={() => { setToken('') }} />
                             </div> : <FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' onClick={() => setisModalOpen(true)} />}
                         </div>

@@ -4,10 +4,11 @@ import { store } from '../../App'
 import { MdCancel } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import Navbar from '../Navbar/Navbar';
+import { HiOutlineLogout } from 'react-icons/hi';
 
 const SidebarMob = () => {
 
-    const { isSideBarOpen, setIsSideBarOpen } = useContext(store)
+    const { isSideBarOpen, setIsSideBarOpen, setToken, setUser, user } = useContext(store)
 
     return (
         <div className={`md:hidden z bg-white w-full h-full sidebar ${isSideBarOpen ? "activex" : ""}`}>
@@ -18,6 +19,12 @@ const SidebarMob = () => {
             <div>
                 <Navbar className='flex md:hidden' />
             </div>
+            {
+                user &&
+                <div className='flex px-6 items-center bg-gray-800 text-white pb-3'>
+                    <span className='text-md'>Logout</span>
+                    <HiOutlineLogout className=' text-green-600 hover:text-orange-400 ms-1 ' role='button' size={25} onClick={() => { setToken(''); setUser(''); setIsSideBarOpen(false) }} />
+                </div>}
         </div>
     )
 }
