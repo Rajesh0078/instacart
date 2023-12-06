@@ -119,17 +119,20 @@ const SearchedProducts = () => {
                                 </div>
                                 <p className="sr-only">{searchData.rating} out of 5 stars</p>
                                 <span className="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                                    {20} reviews
+                                    {Math.ceil(Math.random() * 28)} reviews
                                 </span>
+
                             </div>
+                            <p className='mt-5'>Delivery by within 3 days</p>
                         </div>
-                        <div className='btn text-center mt-5'>
+
+                        <div className='btn text-center lg:mt-12 mt-5'>
                             Add to cart
                         </div>
 
 
                     </div>
-                    <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
+                    <div className="pt-10 pb-2 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-3 lg:pr-8 lg:pt-6">
                         {/* Description and details */}
                         <div>
                             <h3 className="sr-only">Description</h3>
@@ -139,10 +142,17 @@ const SearchedProducts = () => {
                             </div>
                         </div>
 
-                        <div className="mt-10">
+                        <div className="mt-5">
                             <h2 className="text-sm font-medium text-gray-900">Details</h2>
 
-                            <div className="mt-4 space-y-6">
+                            <div className="mt-2 space-y-6">
+                                <p className="text-sm text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod vero corrupti, nam dolorum repellat minus incidunt ipsum harum consequuntur earum, placeat consectetur velit cupiditate fugiat distinctio architecto. Ullam, sed! Nihil.</p>
+                            </div>
+                        </div>
+                        <div className="mt-5">
+                            <h2 className="text-sm font-medium text-gray-900">Store Details</h2>
+
+                            <div className="mt-2 space-y-3">
                                 <p className="text-sm text-gray-600">{searchData.description}</p>
                             </div>
                         </div>
