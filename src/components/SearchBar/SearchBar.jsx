@@ -5,10 +5,13 @@ import { store } from "../../App"
 
 import './search.css'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 const SearchBar = () => {
 
-    const { allData, setAllData } = useContext(store)
+    const navigate = useNavigate()
+
+    const { allData, setAllData, productName, setProductName } = useContext(store)
 
     const [isSearchActive, setIsSearchActive] = useState(false)
     const [searchValue, setSearchValue] = useState('')
@@ -30,20 +33,29 @@ const SearchBar = () => {
         }
     }
 
+    const searchNavigate = (e) => {
+        setSearchValue('')
+        document.getElementsByClassName("input").value = ""
+        setIsSearchActive(false)
+        navigate(`/product/${e.target.innerText}`)
+    }
+
+
     useEffect(() => {
         fetchAllproducts()
     }, [])
 
 
+
     return (
         <div>
             <div className='md:border border-green-900 md:pe-1 md:ps-3 md:py-1 md:flex hidden items-center rounded-3xl lg:w-[30rem] md:w-[20rem] slide-left relative'>
-                <input type="text" placeholder='What do you want..?' className='outline-none  md:w-[94%] hidden md:block' name='search' onChange={changeHandler} autoComplete='off' />
-                <label htmlFor="search" className='bg-green-900 hover:bg-orange-600 text-white p-2 rounded-full'><FaSearch /></label>
+                <input type="text" placeholder='What do you want..?' className='outline-none input md:w-[94%] hidden md:block' name='search' onChange={changeHandler} autoComplete='off' />
+                <span htmlFor="search" className='bg-green-900 hover:bg-orange-600 text-white p-2 rounded-full'><FaSearch /></span>
                 {searchValue.length > 1 &&
                     <div className='absolute top-[115%] bg-white w-full  flex flex-wrap gap-2 left-0 max-h-[15rem] border overflow-y-auto p-2'>
                         {searchValue.map((i, index) => {
-                            return <span key={index} className=' bg-white px-2 py-1 text-[.8rem] rounded-full border' role='button'>{i}</span>
+                            return <span key={index} onClick={searchNavigate} className=' bg-white px-2 py-1 text-[.8rem] rounded-full border' role='button'>{i}</span>
                         })}
                     </div>
                 }
@@ -61,7 +73,7 @@ const SearchBar = () => {
                     {
                         isSearchActive && searchValue &&
                         searchValue.map((i, index) => {
-                            return <span key={index} className='m-1 bg-white px-2 py-1 rounded-full border' role='button'>{i}</span>
+                            return <span key={index} onClick={searchNavigate} className='m-1 bg-white px-2 py-1 rounded-full border' role='button'>{i}</span>
                         })
                     }
                 </div>

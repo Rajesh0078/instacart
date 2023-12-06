@@ -21,6 +21,8 @@ const App = () => {
   const [user, setUser] = useState("")
   const [cartValue, setCartValue] = useState('')
   const [allData, setAllData] = useState([])
+  const [productName, setProductName] = useState('')
+
 
 
   const contextValues = {
@@ -32,7 +34,8 @@ const App = () => {
     pageNo, setPageNo,
     user, setUser,
     cartValue, setCartValue,
-    allData, setAllData
+    allData, setAllData,
+    productName, setProductName
   }
 
   return (

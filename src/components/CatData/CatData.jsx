@@ -6,7 +6,7 @@ import './catdata.css'
 import { FaRegHeart } from 'react-icons/fa';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const CatData = () => {
     const { catData, setCategory, category, setPageNo, user, setCartValue } = useContext(store)
@@ -37,7 +37,13 @@ const CatData = () => {
             console.log(error)
         }
     }
+    const navigate = useNavigate()
 
+    const productClickHandler = (...values) => {
+        if (values[1].target.innerHTML !== "Add to cart") {
+            navigate(`/product/${values[0]}`)
+        }
+    }
 
     return (
         <div className='md:basis-4/5 rounded-md py-2  mar px-3 shadowx'>
@@ -49,7 +55,7 @@ const CatData = () => {
                 {
                     catData.totalproducts ?
                         catData.products.map((i, index) => {
-                            return <div className='md:basis-1/5 basis-1/3   md:p-2 cardxx' key={index}>
+                            return <div className='md:basis-1/5 basis-1/3   md:p-2 cardxx' key={index} onClick={(e) => productClickHandler(i.name, e)} role='button'>
                                 <div className='shadowme rounded-md'>
                                     <div className='flex justify-center pt-2'>
                                         <img src={i.image} alt="product" className='md:h-[8rem] h-[5rem] rounded-md object-cover object-center' />
@@ -64,7 +70,7 @@ const CatData = () => {
                                                 <span className='ms-auto md:block hidden' role='button'><FaRegHeart className='text-orange-600' /></span>
                                             </div>
                                         </div>
-                                        <span className='md:button text-sm bg-green-800 text-white px-2 py-1 inline-block rounded-md my-3' role='button' onClick={e => { addProductToCart(i._id) }}>Add to cart</span>
+                                        <span className='md:button text-sm bg-green-800 text-white px-2 py-1 inline-block rounded-md my-3' role='button' onClick={e => { e.preventDefault(); addProductToCart(i._id) }}>Add to cart</span>
                                     </div>
                                 </div>
                             </div>
