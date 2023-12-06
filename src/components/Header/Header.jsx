@@ -13,7 +13,7 @@ import CartValue from '../CatData/CartValue';
 
 const Header = () => {
 
-    const { setisModalOpen, token, setToken, setIsSideBarOpen, user, setUser, setUserMail } = useContext(store)
+    const { setisModalOpen, token, setToken, setIsSideBarOpen, user, setUser } = useContext(store)
 
     useEffect(() => {
         if (token) {
@@ -22,13 +22,12 @@ const Header = () => {
                     "x-token": token
                 }
             }).then((res) => setUser(res.data))
-            if (user.fullname && user.email) {
+            if (user.fullname) {
                 toast.success("login success")
                 setisModalOpen(false)
-                setUserMail(user.email)
             }
         }
-    }, [token, setisModalOpen, user.fullname, setUser, setUserMail, user.email])
+    }, [token, setisModalOpen, user.fullname, setUser,])
 
 
 

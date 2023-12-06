@@ -20,7 +20,7 @@ const App = () => {
   const [pageNo, setPageNo] = useState(1)
   const [user, setUser] = useState("")
   const [cartValue, setCartValue] = useState('')
-  const [userMail, setUserMail] = useState("")
+  const [allData, setAllData] = useState([])
 
 
   const contextValues = {
@@ -32,7 +32,7 @@ const App = () => {
     pageNo, setPageNo,
     user, setUser,
     cartValue, setCartValue,
-    userMail, setUserMail
+    allData, setAllData
   }
 
   return (
