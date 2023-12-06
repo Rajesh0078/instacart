@@ -109,10 +109,10 @@ const SearchedProducts = () => {
                             <h3 className="sr-only">Reviews</h3>
                             <div className="flex items-center">
                                 <div className="flex items-center">
-                                    {[0, 1, 2, 3, 4].map((rating) => (
+                                    {[2, 3, 4, 5, 6].map((rat) => (
                                         <FaStar
-                                            key={rating}
-                                            className={""}
+                                            key={rat}
+                                            className={`h-5 w-5 flex-shrink-0 ${Math.ceil(searchData.rating) > rat ? 'text-orange-500' : 'text-gray-200'}`}
                                             aria-hidden="true"
                                         />
                                     ))}
