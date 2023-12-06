@@ -101,7 +101,7 @@ const SearchedProducts = () => {
                     {/* Options */}
                     <div className="mt-4 lg:row-span-3 lg:mt-0">
                         <h2 className="sr-only">Product information</h2>
-                        <span className="text-xl line-through me-2 tracking-tight text-gray-600">₹{(searchData.price) * 100}</span>
+                        <span className="text-xl line-through me-2 tracking-tight text-gray-600">₹{Math.ceil((searchData.price) * 100)}</span>
                         <span className="text-3xl tracking-tight text-gray-900">₹{Math.ceil(((searchData.price) * 100) * 0.9)}</span>
                         <p className='text-green-600 mt-1'>10% offer</p>
                         {/* Reviews */}
