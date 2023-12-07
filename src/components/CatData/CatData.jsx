@@ -75,7 +75,9 @@ const CatData = () => {
                                 </div>
                             </div>
                         })
-                        : <Skeleton />
+                        : <div className='flex justify-center items-center h-[40rem] w-full '>
+                            <div className='loader-x'></div>
+                        </div>
                 }
 
 
