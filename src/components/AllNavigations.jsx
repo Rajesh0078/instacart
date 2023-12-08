@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { Vegetables, SearchedProducts, CartPage, Beverages, Canned, Dairy, Spices, Snacks, Pulses, Pan, Grains, Fruits, Home } from '../pages/NavPages'
+import UserPage from '../pages/UserPage'
 
 
 const AllNavigations = () => {
@@ -19,6 +20,7 @@ const AllNavigations = () => {
                 <Route path='/category/:snacks' element={<Snacks />} />
                 <Route path='/category/:spices' element={<Spices />} />
                 <Route path='/cart' element={<CartPage />} />
+                <Route path='/login' element={<UserPage />} />
                 <Route path='/product/:productName' element={<SearchedProducts />} />
                 <Route path='*' element={<>Page not found</>} />
             </Routes>

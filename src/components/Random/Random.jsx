@@ -47,7 +47,9 @@ const Random = () => {
                                         </div>
                                     </div>
                                 </SwiperSlide>
-                            }) : <Skeleton />
+                            }) : <div className='flex justify-center items-center h-[10rem] w-full '>
+                                <div className='loader-x'></div>
+                            </div>
                     }
                 </Swiper >
             </div >
@@ -60,7 +62,7 @@ const Random = () => {
                     slidesPerView={2}
                 >
                     {
-                        !randomProducts.length ?
+                        randomProducts.length ?
                             randomProducts.map((product, index) => {
                                 return <SwiperSlide key={index} className='me-2 py-2 border '>
                                     <div className='w-full flex justify-center h-[7rem]'><img src={product.image} alt="" className='w-[80%]' /></div>

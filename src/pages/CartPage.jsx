@@ -158,25 +158,27 @@ const CartPage = () => {
                     <div className='bg-white shadowx rounded mt-3'>
                         <div className=' h-[21rem] overflow-y-auto px-4 py-2 '>
                             {
-                                cartData &&
-                                cartData.map((i, index) => {
-                                    return <div className='flex gap-2 border my-3' key={index}>
-                                        <img src={i.image} alt="product" className='w-[8rem] h-[8rem]' />
-                                        <div className='w-full'>
-                                            <p className='text-[1.1rem]'>{i.name}</p>
-                                            <span className='text-gray-500 text-sm product_title'>{i.description}</span>
-                                            <p className='bg-green-700 text-sm inline-block text-white px-1 mt-1'><FaStar className='inline mb-1 me-1' />{i.rating}</p>
-                                            <div className='mt-1'>
-                                                <span className=' line-through text-gray-500 text-sm me-2'>₹{Math.ceil(i.price * 100)}</span>
-                                                <span>₹{Math.ceil((i.price * 100) * 0.9)} <span className='text-xs'>/kg</span></span>
-                                            </div>
-                                            <div className='mt-1 flex w-full pe-2'>
-                                                <span className='text-gray-700 text-sm'>Delivery in 3 days</span>
-                                                <p className='ms-auto text-xs bg-orange-600 text-white pt-1 px-1 pb-1 mt-[-.4rem]' role='button' onClick={e => { handleRemoveProduct(i._id) }}>Remove</p>
+                                cartData ?
+                                    cartData.map((i, index) => {
+                                        return <div className='flex gap-2 border my-3' key={index}>
+                                            <img src={i.image} alt="product" className='w-[8rem] h-[8rem]' />
+                                            <div className='w-full'>
+                                                <p className='text-[1.1rem]'>{i.name}</p>
+                                                <span className='text-gray-500 text-sm product_title'>{i.description}</span>
+                                                <p className='bg-green-700 text-sm inline-block text-white px-1 mt-1'><FaStar className='inline mb-1 me-1' />{i.rating}</p>
+                                                <div className='mt-1'>
+                                                    <span className=' line-through text-gray-500 text-sm me-2'>₹{Math.ceil(i.price * 100)}</span>
+                                                    <span>₹{Math.ceil((i.price * 100) * 0.9)} <span className='text-xs'>/kg</span></span>
+                                                </div>
+                                                <div className='mt-1 flex w-full pe-2'>
+                                                    <span className='text-gray-700 text-sm'>Delivery in 3 days</span>
+                                                    <p className='ms-auto text-xs bg-orange-600 text-white pt-1 px-1 pb-1 mt-[-.4rem]' role='button' onClick={e => { handleRemoveProduct(i._id) }}>Remove</p>
+                                                </div>
                                             </div>
                                         </div>
+                                    }) : <div className='flex justify-center items-center h-[40rem] w-full '>
+                                        <div className='loader-x'></div>
                                     </div>
-                                })
                             }
                         </div>
                     </div>

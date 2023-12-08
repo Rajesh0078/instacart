@@ -83,6 +83,9 @@ section{
   height: 100%;
 }
 
+.borderx{
+  border-radius: 60% 40% 0% 20%;
+}
 
 @media screen and (max-width:1024px) {
   section{

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { store } from '../../App'
 import { GrSort } from "react-icons/gr";
-import Skeleton from '../Loaders/Skeleton';
 import './catdata.css'
 import { FaRegHeart } from 'react-icons/fa';
 import axios from 'axios';
