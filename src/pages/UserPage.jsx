@@ -5,7 +5,7 @@ import "../components/Login/login.css"
 
 const UserPage = () => {
     return (
-        <div className='md:h-[36rem] min-h-screen relative overflow-hidden w-full md:pt-0 pt-[2rem]'>
+        <div className='md:h-[36rem] h-[60rem] relative overflow-hidden w-full md:pt-0 pt-[2rem]'>
             <div className='container after:bg-green-900 after:h-[40rem] after:bottom-[-20rem] h-full w-full'>
                 <div className=' flex justify-center items-center h-full w-full'>
                     <div className='shadowx rounded-xl p-2 bg-white h-[85%] w-[90%]'>
