@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <>
-            <div className='shadowx md:flex px-[2rem] py-6 mt-3 hidden justify-between'>
+            <div className='shadowx md:flex px-[2rem] py-6  hidden justify-between'>
                 <div className=''>
                     <Link to={'/'} >
                         <img src="/assets/logo.png" alt="logo" className='w-[8rem]' />
@@ -37,7 +37,7 @@ const Footer = () => {
                     <p>Collaboration</p>
                 </div>
             </div>
-            <div className='shadowx md:hidden p-5 text-sm mt-12'>
+            <div className='shadowx md:hidden p-5 text-sm '>
                 <div className='flex justify-between '>
                     <div className='flex flex-col gap-2'>
                         <p>Home</p>

@@ -21,6 +21,7 @@ const Home = () => {
                 </div>
             </div>
             <Random />
+            <br /><br />
         </section>
     )
 }
