@@ -57,7 +57,7 @@ const Header = () => {
 
             </header >
             <ToastContainer autoClose={2000} />
-            <header className='md:hidden fixed shadow-md w-full py-2 px-3 flex justify-between z items-center bg-white'>
+            <header className='md:hidden fixed shadow-md w-full py-4 px-3 flex justify-between z items-center bg-white'>
                 <div className='flex gap-3 items-center'>
                     <FaBars size={20} className='text-green-900' onClick={sidebarHandler} role='button' />
                     <Link to={'/'}><img src="/assets/logo.png" alt="logo" className='w-[7rem]  slide-right' /></Link>

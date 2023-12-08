@@ -88,6 +88,7 @@ const CartPage = () => {
                         </div>
                     </div>
                 </div>
+                <br />
                 {
                     cartData &&
                     <div className='basis-2/6 bg-white  h-full py-2 shadowx rounded'>
@@ -138,7 +139,7 @@ const CartPage = () => {
                     </div>
                 }
             </div>
-            <div className='md:hidden pt-[3.5rem] px-3'>
+            <div className='md:hidden pt-[4.5rem] px-3'>
                 <div className='basis-4/6 '>
                     <div className=' bg-white px-4 py-2 shadowx rounded'>
                         <div className='flex items-center'>
@@ -229,6 +230,7 @@ const CartPage = () => {
                     </div>
                 }
             </div>
+            <br />
         </>
     )
 }

@@ -6,7 +6,7 @@ const Home = () => {
 
 
     return (
-        <section className='px-[1.5rem] lg:px-[5rem]'>
+        <section className='px-[1.5rem] lg:px-[5rem] lg:py-0 py-3'>
             <div className=' flex justify-between gap-3 flex-col'>
                 <div className=' w-full md:h-[13rem] h-[5rem] rounded-2xl md:m-0 mt-[4rem] green_radient'>
                 </div>
