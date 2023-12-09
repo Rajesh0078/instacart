@@ -40,12 +40,12 @@ const Footer = () => {
             <div className='shadowx md:hidden p-5 text-sm '>
                 <div className='flex justify-between '>
                     <div className='flex flex-col gap-2'>
-                        <p>Home</p>
+                        <Link to={'/'}>Home</Link>
                         <p>Delivery Areas</p>
                         <p>Press</p>
                         <p>Customer Support</p>
                     </div>
-                    <div className='flex flex-col gap-2'>
+                    <div className='hidden flex-col gap-2 '>
                         <p>Privacy Policy</p>
                         <p> Terms of Use</p>
                         <p> Responsible Disclosure Policy</p>
@@ -70,7 +70,7 @@ const Footer = () => {
                             <FaLinkedin className='hover:text-green-800 ' />
                         </div>
                     </div>
-                    <span className='text-slate-700 text-[1.2rem]'>ⓒ Designed By PEKETI RAJESH</span>
+                    <span className='text-slate-700 text-[.8rem]'>ⓒ Designed By PEKETI RAJESH</span>
                 </div>
             </div>
         </>
