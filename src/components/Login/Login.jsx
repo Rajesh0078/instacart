@@ -3,7 +3,7 @@ import { FaEnvelope } from 'react-icons/fa'
 import { RiLockPasswordFill } from 'react-icons/ri'
 import { store } from '../../App'
 import axios from 'axios'
-import { ToastContainer, toast } from 'react-toastify'
+import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 
 const Login = ({ setIsLogin }) => {
@@ -84,7 +84,7 @@ const Login = ({ setIsLogin }) => {
                             </div>
                             <div className='md:px-3 md:text-sm md:mb-2'>forgotten password? <p className='text-green-800 mt-3 inline-block'  >click here</p></div>
                             <div className='w-full mt-3 md:px-3'>
-                                <input type='submit' className='button w-full' role='button' value={"Login"} />
+                                <input type='submit' className='button w-full cursor-pointer' value={"Login"} />
                             </div>
                             <div className='w-full mt-5 md:px-3'>
                                 <span className='inline-block text-center bg-orange-600 text-white  p-1 w-full'>Facebook</span>
