@@ -62,7 +62,7 @@ const CartPage = () => {
                     <div className='bg-white shadowx rounded mt-3'>
                         <div className=' h-[29rem] overflow-y-auto px-4 py-2 '>
                             {
-                                cartData &&
+                                user && cartData &&
                                 cartData.map((i, index) => {
                                     return <div className='flex gap-2 border my-3' key={index}>
                                         <img src={i.image} alt="product" className='w-[10rem] h-[10rem]' />
@@ -90,7 +90,7 @@ const CartPage = () => {
                 </div>
                 <br />
                 {
-                    cartData &&
+                    user && cartData &&
                     <div className='basis-2/6 bg-white  h-full py-2 shadowx rounded'>
                         <div className='text-gray-500 px-4 pb-1 border-b border-gray-300 text-xl'>
                             Price Details
@@ -159,7 +159,7 @@ const CartPage = () => {
                     <div className='bg-white shadowx rounded mt-3'>
                         <div className=' h-[21rem] overflow-y-auto px-4 py-2 '>
                             {
-                                cartData ?
+                                user && cartData ?
                                     cartData.map((i, index) => {
                                         return <div className='flex gap-2 border my-3' key={index}>
                                             <img src={i.image} alt="product" className='w-[8rem] h-[8rem]' />
@@ -177,15 +177,15 @@ const CartPage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    }) : <div className='flex justify-center items-center h-[40rem] w-full '>
-                                        <div className='loader-x'></div>
+                                    }) : <div className='flex justify-center items-center h-full w-full '>
+                                        <div className='text-center'>Please Login <br />or<br /> add items to cart</div>
                                     </div>
                             }
                         </div>
                     </div>
                 </div>
                 {
-                    cartData &&
+                    user && cartData &&
                     <div className='basis-2/6 bg-white mt-3 h-full py-2 shadowx rounded'>
                         <div className='text-gray-500 px-4 pb-1 border-b border-gray-300 text-xl'>
                             Price Details

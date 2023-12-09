@@ -51,7 +51,7 @@ const Header = () => {
                                 <HiOutlineLogout className='inline text-green-900 hover:text-orange-600 ms-2 text-2xl ' role='button' onClick={() => { toast.success("logout success"); setToken(''); setUser("") }} />
                             </div> : <Link to={'/login'}><FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
                         </div>
-                        <UserModal />
+                        {/* <UserModal /> */}
                     </div>
                 </div >
             </header >
@@ -76,7 +76,7 @@ const Header = () => {
                                 <HiOutlineLogout className='hidden text-green-900 hover:text-orange-600 ms-1 ' role='button' size={28} onClick={() => { setToken('') }} />
                             </div> : <Link to={'/login'}> <FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
                         </div>
-                        <UserModal />
+                        {/* <UserModal /> */}
                     </div>
                 </div>
             </header>
