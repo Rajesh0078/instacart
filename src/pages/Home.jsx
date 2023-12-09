@@ -17,11 +17,11 @@ const Home = () => {
                     <div className='basis-1/3 lg:h-[20rem]'>
                         <img src="/assets/img2.png" alt="offerimg" className=' rounded-2xl res_img' />
                     </div>
-                    <div className='basis-1/3  lg:h-[20rem]'><img src="/assets/img3.png" alt="offerimg" className='rounded-2xl  res_img' /></div>
+                    <div className='basis-1/3 lg:h-[20rem]'><img src="/assets/img3.png" alt="offerimg" className='rounded-2xl  res_img' /></div>
                 </div>
             </div>
             <Random />
-            <br /><br />
+            <br /><br /><br /><br /><br />
         </section>
     )
 }
