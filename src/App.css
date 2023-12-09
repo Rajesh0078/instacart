@@ -83,32 +83,26 @@ section{
   height: 100%;
 }
 
-.flip-box {
-  perspective: 1000px;
+.bg_img{
+  background: url(../public/assets/login_bg.jpg) no-repeat;
+  background-position: right;
+  background-size:cover;
 }
 
-.flip-box-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-.flip-box-front, .flip-box-back {
+.focused{
+  top: -26%;
+  background-color: white;
+  left: 10%;
   position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  font-size: .8rem;
+  color: gray;
 }
-/* .flip-box:hover .flip-box-inner {
-  transform: rotateY(180deg);
-} */
-
-
-.flip-box-back {
-  transform: rotateY(180deg);
+.notfocused{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+  left: 12%;
 }
 
 

@@ -61,7 +61,7 @@ const SearchBar = () => {
                 }
             </div>
             {
-                !isSearchActive ? <FaSearch className='md:hidden text-2xl text-green-800' onClick={() => setIsSearchActive(true)} role='button' /> : <FaXmark className='text-3xl text-green-800' onClick={() => setIsSearchActive(false)} role='button' />
+                !isSearchActive ? <FaSearch className='md:hidden text-2xl text-green-800 slide-left' onClick={() => setIsSearchActive(true)} role='button' /> : <FaXmark className='text-3xl text-green-800' onClick={() => setIsSearchActive(false)} role='button' />
             }
 
             <div className={`absolute top-[100%] right-0 bg-slate-50 w-full p-4 md:hidden ${isSearchActive ? "scale-y-100" : "scale-y-0"}`} style={{ transformOrigin: "top", transition: "all 500ms ease" }} >

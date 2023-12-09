@@ -6,6 +6,7 @@ import SidebarMob from './components/SideBar_Mobile/SidebarMob'
 import Navbar from './components/Navbar/Navbar'
 import AllNavigations from './components/AllNavigations'
 import Footer from './components/Footer/Footer'
+import { ToastContainer } from 'react-toastify'
 export const store = createContext()
 
 

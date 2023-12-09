@@ -5,16 +5,17 @@ import './modal.css'
 import { store } from '../../App'
 import { MdClose } from "react-icons/md"
 import axios from "axios"
+import { useNavigate } from 'react-router-dom';
 
 const UserModal = () => {
-    const { isModalOpen, setisModalOpen, setToken } = useContext(store)
+    const { isModalOpen, setisModalOpen, setToken, user } = useContext(store)
     const [islogin, setIsLogin] = useState(true)
-
     const [loginData, setLoginData] = useState({
         email: "",
         password: ""
     })
 
+    const navigate = useNavigate()
     const notify = (msg) => toast.error(msg);
 
     const loginSubmitHandler = (e) => {
@@ -33,6 +34,11 @@ const UserModal = () => {
     const changeHandler = (e) => {
         setLoginData({ ...loginData, [e.target.name]: e.target.value })
     }
+
+    if (user) {
+        navigate('/')
+    }
+
 
     return (
         <div className='modal w-[22rem] md:w-[30rem] rounded-md bg-white' style={{ top: `${isModalOpen ? "230%" : "-1200%"}` }} >
