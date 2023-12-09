@@ -84,7 +84,7 @@ const Login = ({ setIsLogin }) => {
                             </div>
                             <div className='md:px-3 md:text-sm md:mb-2'>forgotten password? <p className='text-green-800 mt-3 inline-block'  >click here</p></div>
                             <div className='w-full mt-3 md:px-3'>
-                                <input type='submit' className='button w-full' value={"Login"} />
+                                <input type='submit' className='button w-full' role='button' value={"Login"} />
                             </div>
                             <div className='w-full mt-5 md:px-3'>
                                 <span className='inline-block text-center bg-orange-600 text-white  p-1 w-full'>Facebook</span>
@@ -93,7 +93,7 @@ const Login = ({ setIsLogin }) => {
                                 <span className='inline-block p-1 text-center border border-blue-600 text-blue-800 w-full'><FaEnvelope className='inline me-2' />Gmail</span>
                             </div>
                         </form>
-                        <p className='mt-5 text-sm text-center' >Dont't have an account? <span className='font-bold text-green-800' onClick={() => setIsLogin(true)}>Register</span></p>
+                        <p className='mt-5 text-sm text-center' >Dont't have an account? <span className='font-bold text-green-800' role='button' onClick={() => setIsLogin(true)}>Register</span></p>
                     </div>
                 </div>
             </div>
