@@ -30,6 +30,14 @@ const Register = ({ setIsLogin }) => {
                 notify(res.data.msg)
             }
         })
+        setSignUpData({
+            fullname: '',
+            email: "",
+            mobile: '',
+            pincode: '',
+            password: '',
+            cpassword: ''
+        })
     }
 
     useEffect(() => {
@@ -60,6 +68,7 @@ const Register = ({ setIsLogin }) => {
                                     id='fullname'
                                     autoComplete='off'
                                     name='fullname'
+                                    value={signupData.fullname}
                                     onChange={changeHandler} />
                             </div>
                         </div>
@@ -71,6 +80,7 @@ const Register = ({ setIsLogin }) => {
                                     className='ms-2 outline-none'
                                     id='email'
                                     name='email'
+                                    value={signupData.email}
                                     onChange={changeHandler} />
                             </div>
                         </div>
@@ -83,6 +93,7 @@ const Register = ({ setIsLogin }) => {
                                     id='mobile'
                                     autoComplete='off'
                                     name='mobile'
+                                    value={signupData.mobile}
                                     onChange={changeHandler} />
                             </div>
                         </div>
@@ -95,6 +106,7 @@ const Register = ({ setIsLogin }) => {
                                     id='pincode'
                                     autoComplete='off'
                                     name='pincode'
+                                    value={signupData.pincode}
                                     onChange={changeHandler} />
                             </div>
                         </div>
@@ -107,6 +119,7 @@ const Register = ({ setIsLogin }) => {
                                     id='password'
                                     autoComplete='off'
                                     name='password'
+                                    value={signupData.password}
                                     onChange={changeHandler} />
                             </div>
                         </div>
@@ -119,6 +132,7 @@ const Register = ({ setIsLogin }) => {
                                     id='cpassword'
                                     autoComplete='off'
                                     name='cpassword'
+                                    value={signupData.cpassword}
                                     onChange={changeHandler} />
                             </div>
                         </div>
