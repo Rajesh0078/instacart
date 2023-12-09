@@ -22,7 +22,7 @@ const SearchedProducts = () => {
             <div className="bg-white">
                 {
                     searchData ?
-                        <div className="md:pt-[.5rem] pt-[4rem]">
+                        <div className="md:pt-[.5rem] pt-[4.6rem]">
                             <nav aria-label="Breadcrumb">
                                 <div className="mx-auto flex max-w-2xl items-center space-x-2 px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                                     {
