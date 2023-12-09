@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { store } from '../App'
 import { FaStar } from 'react-icons/fa'
 import { toast } from 'react-toastify'
+import { loadStripe } from '@stripe/stripe-js';
 
 const CartPage = () => {
 
@@ -37,7 +38,30 @@ const CartPage = () => {
         }
     };
 
+    const makePayment = async () => {
+        const stripe = await loadStripe("pk_test_51Nzw5rSGHWQCcJv8CsBk5CN0k022kj8fAfoljZoLag5KbC1fhvykOiNDQ4JwY4Wj7yNQlpGR1eOnAt3TKpQvQTMS00GP3lmL4j")
+        const body = {
+            products: cartData
+        }
+        const headers = {
+            "Content-Type": "application/json"
+        }
+        const response = await fetch("http://localhost:8888/api/checkout-session", {
+            method: "POST",
+            headers: headers,
+            body: JSON.stringify(body)
+        });
 
+        const session = await response.json();
+
+        const result = stripe.redirectToCheckout({
+            sessionId: session.id
+        });
+        if (result.error) {
+            console.log(result.error);
+        }
+
+    }
 
 
     return (
@@ -84,7 +108,7 @@ const CartPage = () => {
                             }
                         </div>
                         <div className='flex py-2 px-12'>
-                            <p className='button ms-auto'>Place Order</p>
+                            <p className='button ms-auto' onClick={makePayment} role='button'>Place Order</p>
                         </div>
                     </div>
                 </div>
@@ -225,7 +249,7 @@ const CartPage = () => {
                         </div>
                         <hr />
                         <div className='flex py-2 pt-4  justify-center'>
-                            <p className='button '>Place Order</p>
+                            <p className='button' role='button' onClick={makePayment}>Place Order</p>
                         </div>
                     </div>
                 }
