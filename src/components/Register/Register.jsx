@@ -1,10 +1,40 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaEnvelope, FaLocationArrow, FaPhoneAlt, FaUser } from "react-icons/fa"
 import { RiLockPasswordFill } from "react-icons/ri"
+import axios from "axios"
+import { toast } from "react-toastify"
 
 const Register = ({ setIsLogin }) => {
 
+    const [signupData, setSignUpData] = useState({
+        fullname: '',
+        email: "",
+        mobile: '',
+        pincode: '',
+        password: '',
+        cpassword: ''
+    })
 
+    const notify = (msg) => toast.warn(msg)
+
+    const changeHandler = (e) => {
+        setSignUpData({ ...signupData, [e.target.name]: e.target.value })
+    }
+
+    const sigupHnadler = () => {
+        axios.post('https://instacart-server-xck1.onrender.com/api/signup', signupData).then((res) => {
+            if (res.data.msg === "signup successfull") {
+                toast.success(res.data.msg)
+            }
+            else {
+                notify(res.data.msg)
+            }
+        })
+    }
+
+    useEffect(() => {
+        sigupHnadler()
+    }, [])
 
     return (
         <div className='absolute h-full bg-white w-full shadowx flex flex-wrap rounded-xl overflow-hidden'>
@@ -28,7 +58,9 @@ const Register = ({ setIsLogin }) => {
                                 <input type="text"
                                     className='ms-2 outline-none'
                                     id='fullname'
-                                    autoComplete='off' />
+                                    autoComplete='off'
+                                    name='fullname'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className='md:basis-1/2 w-full md:p-3 py-1'>
@@ -37,7 +69,9 @@ const Register = ({ setIsLogin }) => {
                                 <FaEnvelope className='text-green-800' />
                                 <input type="text"
                                     className='ms-2 outline-none'
-                                    id='email' />
+                                    id='email'
+                                    name='email'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className=' md:basis-1/2 w-full md:p-3 py-1'>
@@ -47,7 +81,9 @@ const Register = ({ setIsLogin }) => {
                                 <input type="text"
                                     className='ms-2 outline-none'
                                     id='mobile'
-                                    autoComplete='off' />
+                                    autoComplete='off'
+                                    name='mobile'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className=' md:basis-1/2 w-full md:p-3 py-1'>
@@ -57,7 +93,9 @@ const Register = ({ setIsLogin }) => {
                                 <input type="Number"
                                     className='ms-2 outline-none'
                                     id='pincode'
-                                    autoComplete='off' />
+                                    autoComplete='off'
+                                    name='pincode'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className=' md:basis-1/2 w-full md:p-3 py-1'>
@@ -67,7 +105,9 @@ const Register = ({ setIsLogin }) => {
                                 <input type="password"
                                     className='ms-2 outline-none'
                                     id='password'
-                                    autoComplete='off' />
+                                    autoComplete='off'
+                                    name='password'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className=' md:basis-1/2 w-full md:p-3 py-1'>
@@ -77,11 +117,13 @@ const Register = ({ setIsLogin }) => {
                                 <input type="password"
                                     className='ms-2 outline-none '
                                     id='cpassword'
-                                    autoComplete='off' />
+                                    autoComplete='off'
+                                    name='cpassword'
+                                    onChange={changeHandler} />
                             </div>
                         </div>
                         <div className='w-full mt-3 md:px-3'>
-                            <span className='button w-full'>SIGN UP</span>
+                            <span className='button w-full' onClick={sigupHnadler} role='button'>SIGN UP</span>
                         </div>
                     </form>
                     <p className='mt-5 text-sm text-center' >Already have an account? <span className='font-bold text-green-800' onClick={() => setIsLogin(false)}>login</span></p>
