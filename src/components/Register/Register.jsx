@@ -37,8 +37,7 @@ const Register = ({ setIsLogin }) => {
                                 <FaEnvelope className='text-green-800' />
                                 <input type="text"
                                     className='ms-2 outline-none'
-                                    id='email'
-                                    autoComplete='off' />
+                                    id='email' />
                             </div>
                         </div>
                         <div className=' md:basis-1/2 w-full md:p-3 py-1'>

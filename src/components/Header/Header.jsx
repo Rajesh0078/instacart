@@ -13,7 +13,7 @@ import CartValue from '../CatData/CartValue';
 
 const Header = () => {
 
-    const { setisModalOpen, token, setToken, setIsSideBarOpen, user, setUser } = useContext(store)
+    const { setisModalOpen, token, setToken, setIsSideBarOpen, user, setUser, cartValue } = useContext(store)
 
     useEffect(() => {
         if (token) {
@@ -64,7 +64,12 @@ const Header = () => {
                 <div className='flex gap-3 md:gap-9 items-center '>
                     <SearchBar />
                     <div className='flex gap-3 items-center'>
-                        <Link to={"/cart"}><FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' /></Link>
+                        <Link to={"/cart"} className='relative'>
+                            <FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' />
+                            {
+                                cartValue && user && <span className='absolute top-[-.8rem] text-sm text-white rounded-full left-[70%] bg-orange-600 px-[.4rem]'>{cartValue.length}</span>
+                            }
+                        </Link>
                         <div>
                             {user && token ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
                                 <FaUser className='inline mb-1 me-2' />{user.fullname}

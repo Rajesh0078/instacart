@@ -13,6 +13,7 @@ const Login = ({ setIsLogin }) => {
         email: '',
         password: ""
     })
+
     const notify = (msg) => toast.error(msg);
 
     const loginHandler = (e) => {
