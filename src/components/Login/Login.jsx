@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Login = () => {
+const Login = ({ setIsLogin, isLogin }) => {
+
+
     return (
-        <div>Login</div>
+        <div className='flip-box-front bg-blue-500'>
+            <span onClick={() => setIsLogin(true)}>register</span>
+        </div>
     )
 }
 
