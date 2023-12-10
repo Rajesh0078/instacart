@@ -2,7 +2,7 @@ import React from 'react'
 
 const Success = () => {
     return (
-        <div>Success</div>
+        <div className='flex justify-center items-center min-h-screen'>Success</div>
     )
 }
 

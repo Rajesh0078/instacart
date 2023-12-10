@@ -2,7 +2,7 @@ import React from 'react'
 
 const Cancel = () => {
     return (
-        <div>Cancel</div>
+        <div className='flex justify-center items-center min-h-screen'>Cancel</div>
     )
 }
 
