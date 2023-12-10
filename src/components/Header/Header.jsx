@@ -54,7 +54,7 @@ const Header = () => {
                     <div className='flex gap-5 items-center'>
                         <CartValue />
                         <div>
-                            {user && token ? <div className='border px-3 py-1 bg-slate-200 rounded-full logout'>
+                            {user.fullname ? <div className='border px-3 py-1 bg-slate-200 rounded-full logout'>
                                 <span> {user.fullname}</span>
                                 <HiOutlineLogout className='inline text-green-900 hover:text-orange-600 ms-2 text-2xl ' role='button' onClick={() => { toast.success("logout success"); setToken(''); setUser("") }} />
                             </div> : <Link to={'/login'}><FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
