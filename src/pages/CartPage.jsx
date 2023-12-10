@@ -4,6 +4,7 @@ import { store } from '../App'
 import { FaStar } from 'react-icons/fa'
 import { toast } from 'react-toastify'
 import { loadStripe } from '@stripe/stripe-js';
+import { Link } from 'react-router-dom'
 
 const CartPage = () => {
 
@@ -154,11 +155,11 @@ const CartPage = () => {
                         </div>
                         <hr />
                         <div className='flex py-2 pt-4  justify-center'>
-                            <p className='button '>Place Order</p>
+                            <p className='button' role='button' onClick={makePayment}>Place Order</p>
                         </div>
                         <p className='text-center'>or</p>
                         <div className='flex py-2  justify-center'>
-                            <p className='text-green-900 '>Continue Shopping</p>
+                            <Link className='text-green-900' to={'/'}>Continue Shopping</Link>
                         </div>
                     </div>
                 }
