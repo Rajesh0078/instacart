@@ -42,7 +42,6 @@ const Header = () => {
     const sidebarHandler = () => {
         setIsSideBarOpen(true)
     }
-    console.log(tokenx)
 
     return (
         <>
@@ -55,9 +54,9 @@ const Header = () => {
                     <div className='flex gap-5 items-center'>
                         <CartValue />
                         <div>
-                            {user.fullname ? <div className='border px-3 py-1 bg-slate-200 rounded-full logout'>
+                            {user.fullname ? <div className='border px-3 py-1 bg-slate-200 rounded-full logout '>
                                 <span> {user.fullname}</span>
-                                <HiOutlineLogout className='inline text-green-900 hover:text-orange-600 ms-2 text-2xl ' role='button' onClick={() => { toast.success("logout success"); setToken(''); setUser("") }} />
+                                <HiOutlineLogout className='inline text-green-900 hover:text-orange-600 ms-2 text-2xl ' role='button' onClick={() => { toast.success("logout success"); setToken(''); setUser(""); localStorage.removeItem('token'); }} />
                             </div> : <Link to={'/login'}><FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
                         </div>
                         {/* <UserModal /> */}
@@ -80,7 +79,7 @@ const Header = () => {
                             }
                         </Link>
                         <div>
-                            {user ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
+                            {user.fullname ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
                                 <FaUser className='inline mb-1 me-2' />{user.fullname.split(' ')[0][0]} {user.fullname.split(' ')[1]}
                                 <HiOutlineLogout className='hidden text-green-900 hover:text-orange-600 ms-1 ' role='button' size={28} onClick={() => { setToken(''); localStorage.removeItem('token'); setUser('') }} />
                             </div> : <Link to={'/login'}> <FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
