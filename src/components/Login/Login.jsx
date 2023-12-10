@@ -25,14 +25,14 @@ const Login = ({ setIsLogin }) => {
             } else {
                 setToken(token)
                 notify(res.data.msg)
+                localStorage.setItem('token', token)
             }
-
         })
         setLoginData({ email: "", password: "" })
 
     }
     useEffect(() => {
-        if (user) {
+        if (user.fullname) {
             navigate('/')
         }
     }, [user, navigate])

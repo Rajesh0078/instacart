@@ -23,7 +23,7 @@ const SidebarMob = () => {
                 user &&
                 <div className='flex px-6 items-center bg-gray-800 text-white pb-3'>
                     <span className='text-md'>Logout</span>
-                    <HiOutlineLogout className=' text-green-600 hover:text-orange-400 ms-1 ' role='button' size={25} onClick={() => { setToken(''); setUser(''); setIsSideBarOpen(false) }} />
+                    <HiOutlineLogout className=' text-green-600 hover:text-orange-400 ms-1' role='button' size={25} onClick={() => { localStorage.removeItem('token'); setToken(''); setUser(''); setIsSideBarOpen(false); }} />
                 </div>}
         </div>
     )

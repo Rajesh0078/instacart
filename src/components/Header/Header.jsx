@@ -15,17 +15,26 @@ const Header = () => {
 
     const { setisModalOpen, token, setToken, setIsSideBarOpen, user, setUser, cartValue } = useContext(store)
 
+    const tokenx = localStorage.getItem('token')
+
     useEffect(() => {
         if (token) {
             axios.get("https://instacart-server-xck1.onrender.com/api/getuser", {
                 headers: {
                     "x-token": token
                 }
-            }).then((res) => setUser(res.data))
+            }).then((res) => { setUser(res.data) })
             if (user.fullname) {
                 toast.success("login success")
                 setisModalOpen(false)
             }
+        }
+        if (tokenx) {
+            axios.get("https://instacart-server-xck1.onrender.com/api/getuser", {
+                headers: {
+                    "x-token": tokenx
+                }
+            }).then((res) => setUser(res.data))
         }
     }, [token, setisModalOpen, user.fullname, setUser,])
 
@@ -70,7 +79,7 @@ const Header = () => {
                             }
                         </Link>
                         <div>
-                            {user && token ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
+                            {user ? <div className='border px-2 py-1 bg-slate-200 rounded-full'>
                                 <FaUser className='inline mb-1 me-2' />{user.fullname.split(' ')[0][0]} {user.fullname.split(' ')[1]}
                                 <HiOutlineLogout className='hidden text-green-900 hover:text-orange-600 ms-1 ' role='button' size={28} onClick={() => { setToken('') }} />
                             </div> : <Link to={'/login'}> <FaUser size={22} className='text-green-900 hover:text-orange-600 slide-left cursor-pointer' /></Link>}
