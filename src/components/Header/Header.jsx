@@ -34,10 +34,10 @@ const Header = () => {
                 headers: {
                     "x-token": tokenx
                 }
-            }).then((res) => setUser(res.data))
+            }).then((res) => { setUser(res.data) })
         }
-    }, [token, setisModalOpen, user.fullname, setUser,])
 
+    }, [token, user.fullname, setUser, tokenx])
 
     const sidebarHandler = () => {
         setIsSideBarOpen(true)

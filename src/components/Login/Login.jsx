@@ -5,10 +5,12 @@ import { store } from '../../App'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
+import Skeleton from '../Loaders/Skeleton'
 
 const Login = ({ setIsLogin }) => {
     const navigate = useNavigate()
     const { setToken, user } = useContext(store)
+    const [isLoad, setIsLoad] = useState(false)
     const [loginData, setLoginData] = useState({
         email: '',
         password: ""
@@ -16,12 +18,18 @@ const Login = ({ setIsLogin }) => {
 
     const notify = (msg) => toast.error(msg);
 
+    const load = (des) => {
+        setIsLoad(des)
+    }
+
     const loginHandler = (e) => {
         e.preventDefault()
+        load(true)
         axios.post("https://instacart-server-xck1.onrender.com/api/login", loginData).then((res) => {
             let token = res.data.token
             if (!token) {
                 notify(res.data.msg)
+                load(false)
             } else {
                 setToken(token)
                 notify(res.data.msg)
@@ -33,6 +41,7 @@ const Login = ({ setIsLogin }) => {
     }
     useEffect(() => {
         if (user.fullname) {
+            load(false)
             navigate('/')
         }
     }, [user, navigate])
@@ -94,10 +103,15 @@ const Login = ({ setIsLogin }) => {
                             </div>
                         </form>
                         <p className='mt-5 text-sm text-center' >Dont't have an account? <span className='font-bold text-green-800' role='button' onClick={() => setIsLogin(true)}>Register</span></p>
+                        {
+                            isLoad &&
+                            <Skeleton />
+                        }
                     </div>
-                </div>
-            </div>
 
+                </div>
+
+            </div>
         </>
     )
 }

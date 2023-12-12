@@ -47,7 +47,7 @@ const CartPage = () => {
         const headers = {
             "Content-Type": "application/json"
         }
-        const response = await fetch("https://instacart-server-xck1.onrender.com/api/checkout-session", {
+        const response = await fetch("http://localhost:8888/api/checkout-session", {
             method: "POST",
             headers: headers,
             body: JSON.stringify(body)
@@ -58,6 +58,9 @@ const CartPage = () => {
         const result = stripe.redirectToCheckout({
             sessionId: session.id
         });
+
+        console.log(result)
+
         if (result.error) {
             console.log(result.error);
         }

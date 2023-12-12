@@ -19,7 +19,7 @@ const CartValue = () => {
             <FaShoppingCart size={25} className='text-green-900 hover:text-orange-600 slide-left' />
             {
                 cartValue && user &&
-                <div className=' bg-orange-600 absolute top-[-20px] text-center right-[-14px] rounded-full  px-[.4rem] text-[.9rem] text-white'>{cartValue.length}</div>
+                <div className=' bg-orange-600 absolute top-[-20px] text-center right-[-14px] rounded-full px-[.4rem] text-[.9rem] text-white'>{cartValue.length}</div>
             }
         </Link>
     )
