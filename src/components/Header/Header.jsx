@@ -9,7 +9,7 @@ import { store } from '../../App'
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import CartValue from '../CatData/CartValue';
-
+import { useSelector } from "react-redux"
 
 const Header = () => {
 
@@ -43,6 +43,9 @@ const Header = () => {
         setIsSideBarOpen(true)
     }
 
+    const userx = useSelector((state) => state.userReducer.user)
+    console.log(userx)
+    localStorage.setItem('user', 'Rajesh')
     return (
         <>
             <header className='fixed md:px-[3rem] lg:px-[5rem] shadow-md justify-between w-full py-3  md:flex hidden z bg-white'>
