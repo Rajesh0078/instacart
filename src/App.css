@@ -39,6 +39,16 @@ section{
   background-size: cover;
   background-position: center;
 }
+.image{
+  background: url(../public/assets/1.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.image3{
+  background: url(../public/assets/03.webp) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
 
 .loading .image,
 .loading h4,
